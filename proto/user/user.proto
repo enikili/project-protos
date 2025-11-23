@@ -43,13 +43,12 @@ message DeleteUserResponse {
   bool success = 1;
 }
 
-// УБИРАЕМ ПАГИНАЦИЮ - возвращаем всех пользователей сразу
 message ListUsersRequest {
-  // Пустое сообщение - параметры не нужны
+  // Пустое сообщение - возвращаем всех пользователей
 }
 
 message ListUsersResponse {
-  repeated User users = 1;  // Просто список всех пользователей
+  repeated User users = 1;  // ТОЛЬКО список пользователей, без total
 }
 
 service UserService {
