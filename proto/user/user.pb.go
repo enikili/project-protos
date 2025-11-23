@@ -483,7 +483,6 @@ func (x *DeleteUserResponse) GetSuccess() bool {
 	return false
 }
 
-// УБИРАЕМ ПАГИНАЦИЮ - возвращаем всех пользователей сразу
 type ListUsersRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -527,7 +526,7 @@ type ListUsersResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Users []*User `protobuf:"bytes,1,rep,name=users,proto3" json:"users,omitempty"` // Просто список всех пользователей
+	Users []*User `protobuf:"bytes,1,rep,name=users,proto3" json:"users,omitempty"` // ТОЛЬКО список пользователей, без total
 }
 
 func (x *ListUsersResponse) Reset() {
