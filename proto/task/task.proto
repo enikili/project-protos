@@ -64,11 +64,22 @@ message ListTasksResponse {
   uint32 total = 2;
 }
 
-// TaskService с полным CRUD
+message ListTasksByUserRequest {
+  uint32 user_id = 1;
+  uint32 page = 2;
+  uint32 limit = 3;
+}
+
+message ListTasksByUserResponse {
+  repeated Task tasks = 1;
+  uint32 total = 2;
+}
+
 service TaskService {
   rpc CreateTask (CreateTaskRequest) returns (CreateTaskResponse);
   rpc GetTask (GetTaskRequest) returns (GetTaskResponse);
   rpc UpdateTask (UpdateTaskRequest) returns (UpdateTaskResponse);
   rpc DeleteTask (DeleteTaskRequest) returns (DeleteTaskResponse);
   rpc ListTasks (ListTasksRequest) returns (ListTasksResponse);
+  rpc ListTasksByUser (ListTasksByUserRequest) returns (ListTasksByUserResponse); // ДОБАВЛЯЕМ
 }
