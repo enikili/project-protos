@@ -49,7 +49,7 @@ message ListUsersRequest {
 
 message ListUsersResponse {
   repeated User users = 1;
-  uint32 Total = 2;  // ← ДОБАВЛЯЕМ TOTAL ОБРАТНО
+  uint32 total = 2;  // ← ДОБАВЛЯЕМ TOTAL ОБРАТНО
 }
 
 service UserService {
