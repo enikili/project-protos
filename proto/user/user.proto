@@ -48,7 +48,8 @@ message ListUsersRequest {
 }
 
 message ListUsersResponse {
-  repeated User users = 1;  // ТОЛЬКО список пользователей, без total
+  repeated User users = 1;
+  uint32 total = 2;  // ← ДОБАВЛЯЕМ TOTAL ОБРАТНО
 }
 
 service UserService {
